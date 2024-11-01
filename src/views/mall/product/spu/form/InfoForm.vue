@@ -45,7 +45,7 @@
         :show-word-limit="true"
         class="w-80!"
         maxlength="128"
-        placeholder="请输入商品简介"
+        placeholder="请输入商品简介1"
         type="textarea"
       />
     </el-form-item>

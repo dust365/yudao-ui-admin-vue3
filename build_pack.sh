@@ -23,19 +23,10 @@ echo "开发环境打包完成"
 
 
 
-echo "步骤 #4 rsync 同步到线上服务器"
+echo "步骤 #4 rsync 同步打包产物到线上服务器"
 sshpass -p "$SSH_PASSWORD" rsync -avz --delete dist/ $SERVER_USER@$SERVER_HOST:$DEPLOY_DIR
 echo "部署完成，文件已上传到服务器"
 
 
-
-
-# 如果你使用的是其他方式，例如 FTP 或 Docker 部署，可以在此修改相应的命令
-# 例如使用 docker 部署，可以在这里加入 Docker 部署步骤：
-# docker build -t your-app .
-# docker run -d -p 80:80 your-app
-
-# 最后，如果你需要在服务器上启动或重新启动服务，可以添加命令：
-# ssh $SERVER_USER@$SERVER_HOST "pm2 restart your-app"  # 假设使用 pm2 管理应用
-
 echo "发布到生产环境完成"
+echo "请访问如下地址：8.152.217.4:80"

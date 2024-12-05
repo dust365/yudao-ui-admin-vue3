@@ -13,6 +13,8 @@ function pathResolve(dir: string) {
 
 // https://vitejs.dev/config/
 export default ({command, mode}: ConfigEnv): UserConfig => {
+  console.log("debug command="+command);  // 输出对应环境的 API URL
+  console.log("debug mode="+mode);  // 输出对应环境的 API URL
     let env = {} as any
     const isBuild = command === 'build'
     if (!isBuild) {
@@ -20,7 +22,13 @@ export default ({command, mode}: ConfigEnv): UserConfig => {
     } else {
         env = loadEnv(mode, root)
     }
-    return {
+  console.log("修改前 VITE_BASE_URL  == "+env.VITE_BASE_URL);  // 输出
+  // //没有办法这个值不会改过来
+  //  if(mode=="env.dev"||mode=="env.prod"){
+  //   env.VITE_BASE_URL="http://8.152.217.4:48080"
+  //  }
+  // console.log("修改后 VITE_BASE_URL  == "+env.VITE_BASE_URL);  // 输出对应环境的 API URL
+  return {
         base: env.VITE_BASE_PATH,
         root: root,
         // 服务端渲染

@@ -1,16 +1,43 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "msedge",
+      "type": "node",
       "request": "launch",
-      "name": "Launch Edge against localhost",
-      "url": "http://localhost",
-      "webRoot": "${workspaceFolder}/src",
-      "sourceMaps": true
+      "name": "Run Vite (Local)",
+      "preLaunchTask": "install-dependencies",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "dev-server"],
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "http://localhost:(\\d+)"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run Vite (Dev)",
+      "preLaunchTask": "install-dependencies",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "dev-server"],
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "http://localhost:(\\d+)"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run Vite (Prod)",
+      "preLaunchTask": "install-dependencies",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "prod-server"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+      {
+          "label": "Run Shell Script", // 任务名称
+          "type": "shell",
+          "command": "./build_pack.sh", // 替换为你的脚本路径
+          "options": {
+              "cwd": "${workspaceFolder}" // 设置工作目录
+          },
+          "problemMatcher": [],
+          "group": "build"
+      }
+  ]
+}

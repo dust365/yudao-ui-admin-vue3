@@ -601,6 +601,26 @@ const remainingRouter: AppRouteRecordRaw[] = [
     ]
   },
   {
+    path: '/client',
+    name: 'client',
+    component: () => import('@/views/client/Tools.vue'),
+    meta: {
+      hidden: true
+    },
+    // children: [
+    //   {
+    //     path: 'image/square',
+    //     component: () => import('@/views/ai/image/square/index.vue'),
+    //     name: 'AiImageSquare',
+    //     meta: {
+    //       title: '绘图作品',
+    //       icon: 'ep:home-filled',
+    //       noCache: false
+    //     }
+    //   }
+    // ]
+  },
+  {
     path: '/:pathMatch(.*)*',
     component: () => import('@/views/Error/404.vue'),
     name: '',
@@ -639,6 +659,41 @@ const remainingRouter: AppRouteRecordRaw[] = [
           activeMenu: '/iot/device'
         },
         component: () => import('@/views/iot/device/detail/index.vue')
+      }
+    ]
+  },
+  {
+    path: '/client',
+    component: Layout,
+    name: 'Logs',
+    meta: {
+      title: t('客户端 Tools'),
+      icon: 'ep:briefcase',
+      sort: 4 
+    },
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/client/Tools.vue'),
+        name: 'tools',
+        meta: {
+          title: t('工具面板'),
+          icon: 'ep:histogram',
+          noCache: false,
+          affix: true,
+          sort: 5
+        }
+      },
+      {
+        path: 'log',
+        component: () => import('@/views/client/log/LogHome.vue'),
+        name: 'Client',
+        meta: {
+          title: t('日志捞取'),
+          icon: 'ep:list',
+          noCache: false,
+          affix: true
+        }
       }
     ]
   }

@@ -693,7 +693,20 @@ const remainingRouter: AppRouteRecordRaw[] = [
           icon: 'ep:list',
           noCache: false,
           affix: true
-        }
+        },
+        
+      },
+      {
+        path: 'logtask',
+        component: () => import('@/views/client/logtask/index.vue'),
+        name: 'logtask',
+        meta: {
+          title: t('日志捞取任务'),
+          icon: 'ep:list',
+          noCache: false,
+          affix: true
+        },
+        
       }
     ]
   }

@@ -4,20 +4,6 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Run Vite (Local)",
-      "preLaunchTask": "install-dependencies",
-      "runtimeExecutable": "pnpm",
-      "runtimeArgs": ["run", "dev-server"],
-      "serverReadyAction": {
-        "action": "openExternally",
-        "pattern": "http://localhost:(\\d+)"
-      },
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
-    },
-    {
-      "type": "node",
-      "request": "launch",
       "name": "Run Vite (Dev)",
       "preLaunchTask": "install-dependencies",
       "runtimeExecutable": "pnpm",

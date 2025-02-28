@@ -111,16 +111,14 @@
           <el-button
             link
             type="primary"
-            @click="openForm('update', scope.row.id)"
-            v-hasPermi="['client:log-task:update']"
+            @click="openForm('update', scope.row.taskId)"
           >
             编辑
           </el-button>
           <el-button
             link
             type="danger"
-            @click="handleDelete(scope.row.id)"
-            v-hasPermi="['client:log-task:delete']"
+            @click="handleDelete(scope.row.taskId)"
           >
             删除
           </el-button>

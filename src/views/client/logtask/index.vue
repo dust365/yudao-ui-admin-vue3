@@ -61,7 +61,7 @@
           <el-option label="失败/超时" value="3" />
         </el-select>
       </el-form-item>
-      
+
       <el-form-item label="日志结果链接" prop="resultUrl">
         <el-input
           v-model="queryParams.resultUrl"
